@@ -1,0 +1,4 @@
+class UnknownInternalExceptiomn implements Exception{
+
+
+}

@@ -1,6 +1,7 @@
 import 'package:disoccupied_app/utils/ColorConstants.dart';
 import 'package:disoccupied_app/utils/SizeConstants.dart';
 import 'package:disoccupied_app/utils/TextConstants.dart';
+import 'package:disoccupied_app/view/pages/search_page.dart';
 import 'package:disoccupied_app/view/widgets/BannerHeadline.dart';
 import 'package:disoccupied_app/view/widgets/BannerText.dart';
 import 'package:disoccupied_app/view/widgets/SearchBox.dart';
@@ -216,12 +217,18 @@ class HomePage extends StatelessWidget {
                       ),
 
                       child: Padding(
-                        padding: EdgeInsets.all(SizeConstants.defaultPadding),
+                        padding: EdgeInsets.only(
+                            left: SizeConstants.defaultPadding,
+                          right: SizeConstants.defaultPadding,
+                          bottom: SizeConstants.defaultPadding
+                        ),
                         child: Column(
                           children: [
 
-                            SizedBox(
-                              height: SizeConstants.defaultPadding*1.5,
+                            Flexible(
+                              child: SizedBox(
+                                height: SizeConstants.defaultPadding*1.5 + SizeConstants.defaultPadding,
+                              ),
                             ),
                             Container(
                               margin: EdgeInsets.symmetric(horizontal: SizeConstants.defaultPadding
@@ -242,12 +249,29 @@ class HomePage extends StatelessWidget {
                             ),
 
                             // textbox
-                            SearchBox(searchController: searchController,
-                              enabled: false,
+                            InkWell(
+                              onTap: (){
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(builder: (context){
+                                    return SearchPage(searchController: searchController);
+                                  })
+                                );
+                              },
+                              child: Hero(
+                                tag: 'search',
+                                child: Material(
+                                  color: Colors.transparent,
+                                  child: SearchBox(searchController: searchController,
+                                    enabled: false,
+                                  ),
+                                ),
+                              ),
                             ),
 
-                            SizedBox(
-                              height: SizeConstants.defaultPadding,
+                            Flexible(
+                              child: SizedBox(
+                                height: SizeConstants.defaultPadding,
+                              ),
                             ),
 
                             Container(

@@ -6,6 +6,12 @@ class TextConstants{
   static double fontSizeH3= getH3FromScreenSize();
   static double fontSizeH2 = getH2FromScreenSize();
   static double fontSizeH1 = getH1FromScreenSize();
+  static String endpointDomain = "https://disoccupied.com/";
+  static Map<String, String> errorMessage = {
+    "CLIENT_EXCEPTION" : "We're sorry but something went wrong with the application. Please try restarting the application.",
+    "SERVER_EXCEPTION" : "We're sorry, there's something wrong on our side. Please try after some time.",
+    "UNKNOWN_EXCEPTION": "Some unknown error occured. Please try again or contact us if the error exists."
+  };
 
   static double getH4FromScreenSize(){
 

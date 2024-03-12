@@ -5,6 +5,7 @@ class SizeConstants{
   static double defaultPadding = getDefaultPaddingFromScreenSize();
   static const double homePageBannerSize = 390/263;
   static const double appbarLogoRatio = 158/30;
+  static const double productImageRatio = 275/189;
 
   static double getDefaultPaddingFromScreenSize(){
 

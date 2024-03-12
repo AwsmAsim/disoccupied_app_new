@@ -1,7 +1,7 @@
 import 'package:disoccupied_app/utils/ColorConstants.dart';
 import 'package:disoccupied_app/utils/ScreenSizeConstants.dart';
 import 'package:disoccupied_app/utils/TextConstants.dart';
-import 'package:disoccupied_app/view/HomePage.dart';
+import 'package:disoccupied_app/view/pages/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -30,13 +30,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          useMaterial3: false,
         colorScheme: ColorScheme.fromSeed(
+
             seedColor: ColorConstants.seedColor,
           primary: ColorConstants.primaryColor,
           secondary: ColorConstants.seedColor,
           brightness: Brightness.light
         ),
         textTheme: TextTheme(
+
           headlineLarge: GoogleFonts.roboto(
             color: ColorConstants.seedColorText,
             fontSize: TextConstants.fontSizeH1,
