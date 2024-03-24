@@ -15,6 +15,8 @@ class SearchPage extends StatelessWidget {
 
   TextEditingController searchController;
 
+
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -70,6 +72,7 @@ class SearchPage extends StatelessWidget {
                 tag: "search",
                 child: Material(
                   child: SearchBox(
+                    autoFocus: true,
                     hasBackButton: true,
                     onTapLeft: (){
                       Navigator.of(context).pop();

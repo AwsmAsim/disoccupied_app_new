@@ -214,11 +214,79 @@ class ProductPage extends StatelessWidget {
                       ],
                     ),
 
+                    SizedBox(
+                      height: SizeConstants.defaultPadding*2,
+                    ),
 
-                    SizedBox(height: SizeConstants.defaultPadding*2,),
+                    Column(
+                      children: [
+                        Text('ALTERNATIVES TO CONSIDER',
+                          style: GoogleFonts.staatliches(
+                              fontSize: TextConstants.fontSizeH2,
+                            color: ColorConstants.textColor2
+                          ),
+                        ),
+
+                      ],
+                    ),
+                    SizedBox(height: SizeConstants.defaultPadding,),
 
                     Container(
                       width: double.infinity,
+                      height: (ScreenSizeConstants.width/3) + SizeConstants.defaultPadding + (ScreenSizeConstants.width/4),
+                      child: Row(
+                        children: [
+                          InkWell(
+                            onTap: (){},
+                            child: Container(
+                              width: 30.0,
+                              child: Column(
+                                children: [
+                                  SizedBox(height: ScreenSizeConstants.width/6 - 15.0,),
+                                  Icon(Icons.arrow_back_ios_rounded),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: ListView(
+                              controller: scrollController,
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                alternativeCard(),
+                                alternativeCard(),
+                                alternativeCard(),
+                                alternativeCard(),
+                                alternativeCard(),
+                                alternativeCard(),
+                              ],
+                            ),
+                          ),
+                          InkWell(
+                            onTap: (){
+                              moveForward();
+                            },
+                            child: Container(
+                              width: 30.0,
+                              child: Column(
+                                children: [
+                                  SizedBox(height: ScreenSizeConstants.width/6 - 15.0,),
+                                  Icon(Icons.arrow_forward_ios_rounded),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    SizedBox(height: SizeConstants.defaultPadding),
+
+                    Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: ColorConstants.seedColor,
+                      ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -305,72 +373,7 @@ class ProductPage extends StatelessWidget {
                       ],
                     ),
 
-                    SizedBox(
-                      height: SizeConstants.defaultPadding,
-                    ),
 
-                    Column(
-                      children: [
-                        Text('ALTERNATIVES TO CONSIDER',
-                          style: GoogleFonts.staatliches(
-                            fontSize: TextConstants.fontSizeH2
-                          ),
-                        ),
-
-
-
-                      ],
-                    ),
-                    SizedBox(height: SizeConstants.defaultPadding,),
-
-                    Container(
-                      width: double.infinity,
-                      height: (ScreenSizeConstants.width/3) + SizeConstants.defaultPadding + (ScreenSizeConstants.width/4),
-                      child: Row(
-                        children: [
-                          InkWell(
-                            onTap: (){},
-                            child: Container(
-                              width: 30.0,
-                              child: Column(
-                                children: [
-                                  SizedBox(height: ScreenSizeConstants.width/6 - 15.0,),
-                                  Icon(Icons.arrow_back_ios_rounded),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: ListView(
-                              controller: scrollController,
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                alternativeCard(),
-                                alternativeCard(),
-                                alternativeCard(),
-                                alternativeCard(),
-                                alternativeCard(),
-                                alternativeCard(),
-                              ],
-                            ),
-                          ),
-                          InkWell(
-                            onTap: (){
-                              moveForward();
-                            },
-                            child: Container(
-                              width: 30.0,
-                              child: Column(
-                                children: [
-                                  SizedBox(height: ScreenSizeConstants.width/6 - 15.0,),
-                                  Icon(Icons.arrow_forward_ios_rounded),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
 
                     InkWell(
                       onTap: (){
@@ -429,8 +432,8 @@ class ProductPage extends StatelessWidget {
                       BoxShadow(
                           offset: Offset(0,2),
                           blurRadius: 4,
-                          spreadRadius: 2,
-                          color: Color(0xff577213)
+                          spreadRadius: 0,
+                          color: Colors.black.withOpacity(0.25)
                       )
                     ]
                 ),
@@ -443,8 +446,8 @@ class ProductPage extends StatelessWidget {
           Row(
             children: [
               for(int idx = 0; idx < 5; idx++)
-                Icon(Icons.star_border_outlined,
-                  color: ColorConstants.seedColor,
+                Icon(Icons.star,
+                  color: ColorConstants.seedColorText,
                   size: ScreenSizeConstants.width/16,
                 )
             ],
@@ -455,7 +458,8 @@ class ProductPage extends StatelessWidget {
           ),
           Text('NAME: FIFTH APPAREL',
             style: GoogleFonts.staatliches(
-                fontSize: TextConstants.fontSizeH3
+                fontSize: TextConstants.fontSizeH3,
+              color: ColorConstants.textColor2
             ),
           )
         ],

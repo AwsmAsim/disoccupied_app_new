@@ -1,16 +1,20 @@
+import 'package:disoccupied_app/controller/brand_controller.dart';
 import 'package:disoccupied_app/utils/ColorConstants.dart';
 import 'package:disoccupied_app/utils/ScreenSizeConstants.dart';
 import 'package:disoccupied_app/utils/TextConstants.dart';
 import 'package:disoccupied_app/view/pages/HomePage.dart';
+import 'package:disoccupied_app/view/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/instance_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+
+  BrandController brandController = Get.put(BrandController());
 
 
 
@@ -43,13 +47,13 @@ class MyApp extends StatelessWidget {
           headlineLarge: GoogleFonts.roboto(
             color: ColorConstants.seedColorText,
             fontSize: TextConstants.fontSizeH1,
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.w500,
           ),
           bodyMedium: TextStyle(color: ColorConstants.primaryColor)
         )
       ),
       home: SafeArea(
-        child: HomePage(),
+        child: SplashScreen(),
       ),
     );
   }

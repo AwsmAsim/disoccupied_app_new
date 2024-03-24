@@ -17,7 +17,7 @@ class Company {
   });
 
   factory Company.fromJson(Map<String, dynamic> json) => Company(
-    companyId: json['company']['company_idd'],
+    companyId: json['company']['company_id'],
     companyName: json['company']['company_name'],
     companyLevel: json['company']['company_level'],
     companyWhy: json['company']['company_why'],
