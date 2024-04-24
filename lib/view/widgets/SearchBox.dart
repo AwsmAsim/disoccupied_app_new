@@ -9,6 +9,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 class SearchBox extends StatelessWidget {
@@ -36,7 +37,7 @@ class SearchBox extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(100.0)),
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
         boxShadow: [
           BoxShadow(
             offset: Offset(2,2),
@@ -149,16 +150,23 @@ class SearchBox extends StatelessWidget {
           //     )
           // ),
 
+
+          // Search box
           Expanded(
             child: DropDownSearchField(
               textFieldConfiguration: TextFieldConfiguration(
-                  autofocus: true,
+                  autofocus: false,
                   style: DefaultTextStyle.of(context).style.copyWith(
                       fontStyle: FontStyle.italic
                   ),
                   decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: "Enter brand name"
+                      hintText: "Search a brand",
+                    hintStyle: GoogleFonts.roboto(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.normal
+                    )
                   )
               ),
               suggestionsCallback: (pattern) async {
@@ -200,31 +208,31 @@ class SearchBox extends StatelessWidget {
           // ),
 
 
-          InkWell(
-            onTap: onTapRight,
-            child: AspectRatio(aspectRatio: 1,
-              child: Container(
-                margin: EdgeInsets.all(5.0),
-                decoration: BoxDecoration(
-                  color: Color(0xffEAF1E6),
-                  shape: BoxShape.circle
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset(
-                      'assets/svg/camera_icon.svg',
-                      height: 25.0,
-                      width: 25.0,
-
-                    ),
-                  ],
-                ),
-              ),
-
-            ),
-          )
+          // InkWell(
+          //   onTap: onTapRight,
+          //   child: AspectRatio(aspectRatio: 1,
+          //     child: Container(
+          //       margin: EdgeInsets.all(5.0),
+          //       decoration: BoxDecoration(
+          //         color: Color(0xffEAF1E6),
+          //         shape: BoxShape.circle
+          //       ),
+          //       child: Column(
+          //         mainAxisAlignment: MainAxisAlignment.center,
+          //         crossAxisAlignment: CrossAxisAlignment.center,
+          //         children: [
+          //           SvgPicture.asset(
+          //             'assets/svg/camera_icon.svg',
+          //             height: 25.0,
+          //             width: 25.0,
+          //
+          //           ),
+          //         ],
+          //       ),
+          //     ),
+          //
+          //   ),
+          // )
         ],
       ),
 

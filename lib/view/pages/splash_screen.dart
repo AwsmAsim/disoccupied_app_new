@@ -1,6 +1,7 @@
 import 'package:disoccupied_app/utils/ColorConstants.dart';
 import 'package:disoccupied_app/utils/ScreenSizeConstants.dart';
 import 'package:disoccupied_app/view/pages/HomePage.dart';
+import 'package:disoccupied_app/view/pages/navigator_page.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -18,7 +19,7 @@ class SplashScreen extends StatelessWidget {
           if(snapshot.connectionState == ConnectionState.waiting){
             return Container(
               decoration: BoxDecoration(
-                color: ColorConstants.seedColor,
+                color: Colors.white,
               ),
               child: Center(
                 child: AspectRatio(
@@ -36,7 +37,7 @@ class SplashScreen extends StatelessWidget {
               ),
             );
           }
-          return HomePage();
+          return NavigatorPage();
         }
     );
   }

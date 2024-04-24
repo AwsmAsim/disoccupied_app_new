@@ -12,6 +12,9 @@ class TextConstants{
     "SERVER_EXCEPTION" : "We're sorry, there's something wrong on our side. Please try after some time.",
     "UNKNOWN_EXCEPTION": "Some unknown error occured. Please try again or contact us if the error exists."
   };
+  static const String aboutUsText = "We’re Nadia and Shehzad, a Palestinian and Kashmiri wife and husband. An art teacher and a financial analyst. We've followed the money trails and ranked thousands of companies based on their support for Palestine. For years we’ve protested against war and inequality overseas and here in America. This time is different. As a genocide unfolds in Palestine, the continued silence and outright support of political leaders and corporations has galvanized us and billions of people of conscience. We must use our collective economic strength to rally against the profiteering and politics that has enabled this brutal occupation.";
+  static const String contactUsText = "Want to get in touch? Fill out the form below to send us a message and we'll get back to you as soon as possible!";
+  static const String contactUsFollowText = "Follow us for all our latest updates and share DisOccupied with your friends and family.";
 
   static double getH4FromScreenSize(){
 
